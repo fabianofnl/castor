@@ -70,5 +70,16 @@ Acessar o sistema no navegador:
 http://localhost:8080
 ```
 
+## Acessar páginas
 
+Exemplo de acesso com parametro
 
+```bash
+http://localhost:8080/page?name=QualquerValor
+```
+
+Exemplo de acesso a página de estilos Bootstrap
+
+```bash
+http://localhost:8080/style
+```
