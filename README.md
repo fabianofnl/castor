@@ -47,21 +47,25 @@ Gerenciamento de dependências realizado via **Spring Boot Starter Parent**.
 Para compilar o projeto:
 
 ```bash
-mvn clean package ( ou clean install )
+cd castor (raiz do projeto)
 
-use no final -DskipTests para pular os testes se necessário
+mvn clean install -DskipTests
+
+o uso de -DskipTests serve para pular os testes
 ```
 
 Executar o projeto:
 
 ```bash
+cd castor-web (acessar o modulo web)
+
 mvn spring-boot:run
 ```
 
 Executar o projeto após implantado:
 
 ```bash
-java -jar target/restaurante-0.0.1-SNAPSHOT.jar
+java -jar target/castor-web-0.0.1.jar
 ```
 
 Acessar o sistema no navegador:
