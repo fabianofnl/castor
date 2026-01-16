@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+    <title>Página Home</title>
+</head>
+<body>
+
+
+
+<div class="container">
+    <p>Parametro: <strong th:text="${name}"></strong></p>
+
+    <p>Método 1 de busca: <span class="badge text-bg-secondary" th:text="${pessoa?.name}"></span></p>
+
+    <p>Método 2 de busca (tabela abaixo):</p>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${not #lists.isEmpty(pessoas)}" th:each="p : ${pessoas}">
+                <th th:text="${p.id}" scope="row"></th>
+                <td th:text="${p.name}"></td>
+            </tr>
+
+        </tbody>
+        <tfoot th:if="${#lists.isEmpty(pessoas)}">
+            <tr>
+                <td colspan="2" class="text-center">Não foram encontrados resultados.</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<script th:src="@{/js/bootstrap/bootstrap.js}"></script>
+
+</body>
+</html>

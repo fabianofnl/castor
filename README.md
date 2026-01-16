@@ -1,6 +1,13 @@
 # Sistema de Restaurante
 README Técnico – Spring Boot
 
+### Stack
+- Java 17
+- Spring Boot 3.2.x
+- Flyway
+- JPA / Hibernate
+- Thymeleaf
+
 ---
 
 ## Requisitos de Ambiente
@@ -68,21 +75,24 @@ Executar o projeto após implantado:
 java -jar target/castor-web-0.0.1.jar
 ```
 
-Acessar o sistema no navegador:
+Inicializar o Spring Boot em modo debug
 
 ```bash
-http://localhost:8080
+MAVEN_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005" \
+mvn spring-boot:run
 ```
 
 ## Acessar páginas
 
-Exemplo de acesso com parametro
+- Exemplo de acesso com parametro de pesquisa
+- Sem parametro faz uma busca de todos os dados
 
 ```bash
-http://localhost:8080/page?name=QualquerValor
+http://localhost:8080/page?name=Maria
+http://localhost:8080/page
 ```
 
-Exemplo de acesso a página de estilos Bootstrap
+- Exemplo de acesso a página de estilos Bootstrap
 
 ```bash
 http://localhost:8080/style

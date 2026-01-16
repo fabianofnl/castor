@@ -4,16 +4,349 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/custom/style.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/images/favicon.ico}"/>
     <title>Bootstrap demo</title>
 </head>
 <body>
-    <div class="container">
-        <h1 th:text="${message}">Padrão de estilos</h1>
-
-
-
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #CFE9FC;" data-bs-theme="light">
+    <div class="container-fluid">
+        <span class="navbar-brand">UI Kit</span>
     </div>
+</nav>
 
-<script th:src="@{/js/bootstrap/bootstrap.js}"></script>
+<div class="bg-light border-bottom">
+    <div class="container py-2 text-center small">
+        Código fonte disponível em (na estrutura do projeto):
+        <strong>castor-web/src/main/resources/templates/style.html</strong>
+    </div>
+</div>
+
+<div class="container my-4">
+
+    <h1 class="mb-4">Catálogo de Componentes</h1>
+
+    <!-- Secao: Botoes -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Botões</h2>
+
+        <div class="card p-3">
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-light">Light</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-outline-secondary">Outline</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secao: Formularios -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Formulários</h2>
+
+        <div class="card p-3">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Digite o nome">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="email@exemplo.com">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Observações</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary">Salvar</button>
+                    <button class="btn btn-outline-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Secao: Alertas -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Alertas</h2>
+
+        <div class="card p-3">
+            <div class="alert alert-success">Sucesso!</div>
+            <div class="alert alert-danger">Erro!</div>
+            <div class="alert alert-warning">Atencao!</div>
+            <div class="alert alert-info">Informacao</div>
+        </div>
+    </section>
+
+    <!-- Secao: Tabela -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Tabela</h2>
+
+        <div class="card p-3">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Item A</td>
+                    <td><span class="badge bg-success">Ativo</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Item B</td>
+                    <td><span class="badge bg-secondary">Inativo</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Secao: Modal -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Modal</h2>
+
+        <div class="card p-3">
+            <div class="modal position-static d-block" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-3 mt-3">
+            <!-- Button trigger modal -->
+            <div class="d-flex gap-2 flex-wrap">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secao: Toasts -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Toasts</h2>
+
+        <div class="card p-3">
+            <div class="d-flex gap-2 flex-wrap">
+                <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+            </div>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img th:src="@{/images/icons8-caixa-de-selecao-desmarcada-16.png}" class="rounded me-2" alt="">
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secao: Dropdowns -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Dropdowns</h2>
+
+        <div class="card p-3">
+            <!-- Example single danger button -->
+            <div class="d-flex gap-2 flex-wrap">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Danger
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secao: Pagination -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Pagination</h2>
+
+        <div class="card p-3">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Secao: Spinners -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Spinners</h2>
+
+        <div class="card css-card p-3">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>&nbsp;
+            <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>&nbsp;
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="card css-card p-3 mt-3">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>&nbsp;
+            <div class="spinner-grow text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>&nbsp;
+            <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="card css-card p-3 mt-3">
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span class="visually-hidden" role="status">Loading...</span>
+            </button>&nbsp;&nbsp;
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Secao: Offcanvas - CANVAS -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">Offcanvas</h2>
+
+        <div class="card p-3">
+            <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    Link with href
+                </a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    Button with data-bs-target
+                </button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
+<script th:src="@{/js/custom/script.js}"></script>
 </body>
 </html>
